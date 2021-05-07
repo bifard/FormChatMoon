@@ -1,0 +1,309 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.wallaper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(start.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    
+}
+.background {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.backgroundImgOut {
+    background-position: -20vw -20vh;
+    background-size: 140vw 140vh;
+    transition: 2s;
+}
+.backgroundOut{
+    background-color: rgba(0, 0, 0, 0);
+}
+.backgroundOutClick {
+    background-color: rgba(0, 0, 0, 0);
+}
+.button_conteiner {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 80px;
+    flex-wrap: wrap;
+    
+}
+.moonOut {
+    transform: translateY(-200%) scaleX(3) scaleY(3);
+    transition: 2s;
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.3, 0.5, 0.8, 2);
+}
+.hOut {
+    position: relative;
+    transform: translateY(-420%);
+    opacity: 0;
+    transition: 1.5s;
+}
+.moon_png {
+    width: 100%;
+    height: 100%;
+}
+.conteiner_h-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 80px;
+    
+}
+.button_login,
+.button_registr {
+    /* padding: 10px 40px; */
+    min-width: 200px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 20px;
+    border: 5px solid rgba(167, 178, 197, 0.3);
+    color: rgba(167, 178, 197, 0.3);
+    border-radius: 20px;
+    background-color: rgba(245, 237, 237, 0);
+    outline: none;
+}
+.button_registr:hover,
+.button_login:hover{
+    cursor: pointer;
+    border: 5px solid rgba(167, 178, 197, 1);
+    color: rgba(167, 178, 197, 1);
+}
+
+.h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -85px;
+}
+.h2 {
+    font-family: stalinist;
+    color: #888EA2;
+    font-size: 72px;
+    line-height: 72px;
+}
+.h1 {
+    font-family: simsun;
+    color: #888EA2;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+/* Form to registr */
+.form_registr {
+    width: 0;
+    height: 0;
+    z-index: -900;
+    position: absolute;
+    opacity: 0;
+}
+.form_registr_on {
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 900;
+    display: flex;
+    opacity: 1;
+    transition: 2s;
+    transition-property: opacity;
+}
+.form_logIn {
+    width: 0;
+    height: 0;
+    z-index: -900;
+    position: absolute;
+    opacity: 0;
+}
+.form_logIn_on {
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 900;
+    display: flex;
+    opacity: 1;
+    transition: 2s;
+    transition-property: opacity;
+}
+.registr-logIn,
+.logIn-registr{
+    display: none;
+    position: relative;
+    top: calc(100vh/7);
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #A7B2C5;
+    border-radius: 15px;
+    max-width: 510px;
+    max-height: 500px;
+    width: 67vw;
+   /*  min-height: 40vh; */
+    padding: 59px 58px 46px 52px ;
+}
+.logIn_p,
+.registr_p {
+    font-family: TW;
+    font-style: normal;
+    font-weight: 800;
+    font-size: calc(100vw/50 + 100vh/50);
+    line-height: 20px;
+}
+input {
+    background: #A7B2C5;
+    border: 3px solid rgba(0, 21, 53, 0.3);
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-family: Tuffy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(100vw/50 + 100vh/50);
+    line-height: 20px;
+    padding: calc((100vw/50 + 100vh/50)/4) 13px;
+    outline: none;
+    margin-top: calc((100vw/20 + 100vh/20)/4);
+}
+input::placeholder {
+    color: #001535;
+    font-family: Tuffy;
+}
+.registr_button {
+    background: #001535;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-family: TW;
+    font-style: normal;
+    font-size: calc(100vw/50 + 100vh/50);
+    line-height: 20px;
+    padding: 16px 25px;
+    color: #A7B2C5;
+    outline: none;
+    border: none;
+    
+}
+.registr_button:hover {
+    box-shadow: inset 6px 6px 6px rgba(167, 178, 197, 0.3);
+    cursor: pointer;
+}
+.notification {
+    display: flex;
+    margin-top: calc((100vw/20 + 100vh/20)/4);
+}
+.notification_p {
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: Tuffy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(100vw/60 + 100vh/60);
+    line-height: 20px;
+    color: #001535;
+    padding: 0 10px;
+}
+.notification_input {
+    position: absolute;
+    z-index: -20;
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+}
+
+.notification_label {
+    width: 25px;
+    height: 25px;
+    background: #A7B2C5;
+    border: 1px solid #001535;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.notification_input:checked + .notification_label {
+    width: 25px;
+    height: 25px;
+    background: #001535;
+    background-image: url(Vector3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #001535;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.registr_recover_pass {
+    font-family: Tuffy;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 20px;
+    color: #001535;
+    margin-top: 15px;
+}
+
+@media (max-width: 399px){
+    .button_registr {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 1000px){
+    .registr_button {
+        font-size: calc(100vw/50 + 100vh/50);
+        margin-top: calc((100vw/20 + 100vh/20)/4);
+    }
+    input {
+        font-size: calc(100vw/50 + 100vh/50);
+    }
+    .logIn_p,
+    .registr_p {
+        font-size: calc(100vw/50 + 100vh/50);
+    }
+}
+@media (min-width: 1001px){
+    .registr_button {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    input {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    .logIn_p,
+    .registr_p {
+        font-size: 24px;
+    }
+    .notification_p {
+        font-size: 24px;
+    }
+}
+
+@font-face {
+    font-family: stalinist;
+    src: url(fonts/ofont.ru_Stalinist\ One.ttf);
+}
+@font-face {
+    font-family: simsun;
+    src: url(fonts/simsun.ttf);
+}
+@font-face {
+    font-family: TW;
+    src: url(fonts/Tw\ Cen\ MT\ Condensed\ Extra\ Bold.ttf);
+}
+@font-face {
+    font-family: Tuffy;
+    src: url(fonts/7fonts.ru_Tuffy.ttf);
+}
